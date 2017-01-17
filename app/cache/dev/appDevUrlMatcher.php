@@ -114,6 +114,39 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\BookController::indexAction',  '_route' => 'homepage',);
         }
 
+        if (0 === strpos($pathinfo, '/book')) {
+            // search_books
+            if ($pathinfo === '/book/search') {
+                return array (  '_controller' => 'AppBundle\\Controller\\BookController::searchAction',  '_route' => 'search_books',);
+            }
+
+            // create_book
+            if ($pathinfo === '/book/create') {
+                return array (  '_controller' => 'AppBundle\\Controller\\BookController::createAction',  '_route' => 'create_book',);
+            }
+
+            // new_book
+            if ($pathinfo === '/book/new') {
+                return array (  '_controller' => 'AppBundle\\Controller\\BookController::newAction',  '_route' => 'new_book',);
+            }
+
+            // delete_book
+            if (0 === strpos($pathinfo, '/book/delete') && preg_match('#^/book/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete_book')), array (  '_controller' => 'AppBundle\\Controller\\BookController::deleteAction',));
+            }
+
+            // edit_book
+            if (0 === strpos($pathinfo, '/book/edit') && preg_match('#^/book/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'edit_book')), array (  '_controller' => 'AppBundle\\Controller\\BookController::editAction',));
+            }
+
+            // update_book
+            if ($pathinfo === '/book/update') {
+                return array (  '_controller' => 'AppBundle\\Controller\\BookController::updateAction',  '_route' => 'update_book',);
+            }
+
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

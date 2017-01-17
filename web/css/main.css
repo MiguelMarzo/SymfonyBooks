@@ -2,3 +2,6 @@ table.books-table img{
     max-height: 10em;
     max-width: 6em;
 }
+form.navbar-right{
+    margin-right: 5em;
+}

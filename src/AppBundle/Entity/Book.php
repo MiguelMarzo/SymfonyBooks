@@ -40,6 +40,14 @@ class Book {
      */
     private $price;
     
+    function __construct($coverUrl, $title, $author, $price) {
+        $this->coverUrl = $coverUrl;
+        $this->title = $title;
+        $this->author = $author;
+        $this->price = $price;
+    }
+
+    
     function getId() {
         return $this->id;
     }

@@ -21,20 +21,20 @@ class __TwigTemplate_7e500c59d5cf583b38a620b9678eacd97bea07b2fedadca016021ffdaf3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_be0aa7e2f7b47fafdc499bc4b928f545ae655ce2a591a595ed9b4d52606bbd5b = $this->env->getExtension("native_profiler");
-        $__internal_be0aa7e2f7b47fafdc499bc4b928f545ae655ce2a591a595ed9b4d52606bbd5b->enter($__internal_be0aa7e2f7b47fafdc499bc4b928f545ae655ce2a591a595ed9b4d52606bbd5b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "books/index.html.twig"));
+        $__internal_4315f042a7a4b58b8318748525c91fb00042d9caa0d3c746216bb6f7eb21ac9d = $this->env->getExtension("native_profiler");
+        $__internal_4315f042a7a4b58b8318748525c91fb00042d9caa0d3c746216bb6f7eb21ac9d->enter($__internal_4315f042a7a4b58b8318748525c91fb00042d9caa0d3c746216bb6f7eb21ac9d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "books/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_be0aa7e2f7b47fafdc499bc4b928f545ae655ce2a591a595ed9b4d52606bbd5b->leave($__internal_be0aa7e2f7b47fafdc499bc4b928f545ae655ce2a591a595ed9b4d52606bbd5b_prof);
+        $__internal_4315f042a7a4b58b8318748525c91fb00042d9caa0d3c746216bb6f7eb21ac9d->leave($__internal_4315f042a7a4b58b8318748525c91fb00042d9caa0d3c746216bb6f7eb21ac9d_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_ee42ff3a599a2753587f7d6cbe862a4e35b3a1c28a568b0b14d752945a345c06 = $this->env->getExtension("native_profiler");
-        $__internal_ee42ff3a599a2753587f7d6cbe862a4e35b3a1c28a568b0b14d752945a345c06->enter($__internal_ee42ff3a599a2753587f7d6cbe862a4e35b3a1c28a568b0b14d752945a345c06_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_0e81c1c736835d7de84ba7ca4017dc78051c1ee6bd820f934347fd382afdcd1f = $this->env->getExtension("native_profiler");
+        $__internal_0e81c1c736835d7de84ba7ca4017dc78051c1ee6bd820f934347fd382afdcd1f->enter($__internal_0e81c1c736835d7de84ba7ca4017dc78051c1ee6bd820f934347fd382afdcd1f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <div class=\"row\">
@@ -74,27 +74,42 @@ class __TwigTemplate_7e500c59d5cf583b38a620b9678eacd97bea07b2fedadca016021ffdaf3
             // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($context["book"], "price", array()), "html", null, true);
             echo "€</td>
+                            <td class=\"actions\">
+                                <a href=\"";
+            // line 24
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("edit_book", array("id" => $this->getAttribute($context["book"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-sm btn-default\">
+                                    <span class=\"glyphicon glyphicon-edit\"></span> Editar
+                                </a> 
+                                <a href=\"";
+            // line 27
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("delete_book", array("id" => $this->getAttribute($context["book"], "id", array()))), "html", null, true);
+            echo "\" class=\"btn btn-sm btn-danger\">
+                                    <span class=\"glyphicon glyphicon-trash\"></span> Eliminar
+                                </a>                         
+                            </td>
                             <td></td>
                         </tr>
                     ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 26
+            // line 34
             echo "                        <tr td colspan=\"5\">No se han encontrado libros</td></tr>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['book'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
+        // line 36
         echo "                </tbody>
+
             </table>
         </div>
     </div>
 ";
         
-        $__internal_ee42ff3a599a2753587f7d6cbe862a4e35b3a1c28a568b0b14d752945a345c06->leave($__internal_ee42ff3a599a2753587f7d6cbe862a4e35b3a1c28a568b0b14d752945a345c06_prof);
+        $__internal_0e81c1c736835d7de84ba7ca4017dc78051c1ee6bd820f934347fd382afdcd1f->leave($__internal_0e81c1c736835d7de84ba7ca4017dc78051c1ee6bd820f934347fd382afdcd1f_prof);
 
     }
 
@@ -110,7 +125,7 @@ class __TwigTemplate_7e500c59d5cf583b38a620b9678eacd97bea07b2fedadca016021ffdaf3
 
     public function getDebugInfo()
     {
-        return array (  91 => 28,  84 => 26,  75 => 22,  71 => 21,  67 => 20,  63 => 19,  60 => 18,  55 => 17,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  105 => 36,  98 => 34,  86 => 27,  80 => 24,  75 => 22,  71 => 21,  67 => 20,  63 => 19,  60 => 18,  55 => 17,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -135,12 +150,21 @@ class __TwigTemplate_7e500c59d5cf583b38a620b9678eacd97bea07b2fedadca016021ffdaf3
 /*                             <td>{{ book.title }}</td>*/
 /*                             <td>{{ book.author }}</td>*/
 /*                             <td>{{ book.price }}€</td>*/
+/*                             <td class="actions">*/
+/*                                 <a href="{{ path('edit_book', {'id': book.id}) }}" class="btn btn-sm btn-default">*/
+/*                                     <span class="glyphicon glyphicon-edit"></span> Editar*/
+/*                                 </a> */
+/*                                 <a href="{{ path('delete_book', {'id': book.id}) }}" class="btn btn-sm btn-danger">*/
+/*                                     <span class="glyphicon glyphicon-trash"></span> Eliminar*/
+/*                                 </a>                         */
+/*                             </td>*/
 /*                             <td></td>*/
 /*                         </tr>*/
 /*                     {% else %}*/
 /*                         <tr td colspan="5">No se han encontrado libros</td></tr>*/
 /*                     {% endfor %}*/
 /*                 </tbody>*/
+/* */
 /*             </table>*/
 /*         </div>*/
 /*     </div>*/

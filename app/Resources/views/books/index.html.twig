@@ -20,12 +20,21 @@
                             <td>{{ book.title }}</td>
                             <td>{{ book.author }}</td>
                             <td>{{ book.price }}€</td>
+                            <td class="actions">
+                                <a href="{{ path('edit_book', {'id': book.id}) }}" class="btn btn-sm btn-default">
+                                    <span class="glyphicon glyphicon-edit"></span> Editar
+                                </a> 
+                                <a href="{{ path('delete_book', {'id': book.id}) }}" class="btn btn-sm btn-danger">
+                                    <span class="glyphicon glyphicon-trash"></span> Eliminar
+                                </a>                         
+                            </td>
                             <td></td>
                         </tr>
                     {% else %}
                         <tr td colspan="5">No se han encontrado libros</td></tr>
                     {% endfor %}
                 </tbody>
+
             </table>
         </div>
     </div>
